@@ -2,10 +2,10 @@ import { useContext } from "react";
 import { TodoContext } from "../context/TodoContext";
 
 export const useTodo = () => {
-    const {todos, setTodos} = useContext(TodoContext);
-
+    const {state, dispatch} = useContext(TodoContext);
+    console.log("State: ", state)
   return {
-    todoslist: todos,
-
+    todos: state.todos,
+    postAction: dispatch,
   }
 }

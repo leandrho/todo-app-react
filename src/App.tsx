@@ -1,11 +1,15 @@
-import { Todo } from "./todo/Todo"
+import { TodoApp } from "./todo/TodoApp"
+import { TodoProvider } from './todo/context/TodoProvider';
 
 function App() {
 
   return (
     <>
     <div>
-      <Todo />
+      <TodoProvider>
+        <TodoApp />
+      </TodoProvider>
+     
     </div>
     </>
   )

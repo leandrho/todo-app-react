@@ -8,7 +8,7 @@ export const TodoApp = () => {
   return (
     <>
 
-            <h1>Todos:</h1>
+            <h1 className="text-red-300 text-6xl">Todos:</h1>
             {
                 todos.map((todo: Todo) => (
                     <div key={todo.id}>

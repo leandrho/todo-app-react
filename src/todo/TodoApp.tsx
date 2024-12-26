@@ -8,6 +8,7 @@ export const TodoApp = () => {
     const {todos} = useTodo();
   return (
     <>
+      <main className=''>
             <TodoForm />
             <h1 className="text-red-300 text-6xl">Todos:</h1>
             {
@@ -17,6 +18,7 @@ export const TodoApp = () => {
                     </div>
                 ))
             }
+      </main>
         
     </>
   )

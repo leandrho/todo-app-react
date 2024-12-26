@@ -5,11 +5,10 @@ function App() {
 
   return (
     <>
-    <div>
+    <div className="min-h-screen flex flex-col items-center mt-16">
       <TodoProvider>
         <TodoApp />
       </TodoProvider>
-     
     </div>
     </>
   )

@@ -1,5 +1,5 @@
 import type { Todo, TodoState } from "../interfaces/interfaces";
-
+let todoNextId = 0;
 export type TodoAction = 
         {type: 'add-todo', payload: Todo} |
         {type: 'toggle-todo', payload: {id: string}} 
@@ -14,12 +14,12 @@ export const InitialState : TodoState ={
     todoCount: 2,
     todos: [
         {
-            id: '1',
+            id: ++todoNextId+'',
             desc:  "Recolectar las piedras",
             completed: false
         },
         {
-            id: '2',
+            id: ++todoNextId+'',
             desc:  "Recolectar las aguas",
             completed: false
         }
@@ -34,7 +34,7 @@ export const todoReducer = (state :TodoState = InitialState, action: TodoAction 
             console.log('add todo')
             return {
                 ...state,
-                todos: [...state.todos, action.payload]
+                todos: [...state.todos, {...action.payload, id: ++todoNextId+''}]
             }
         case "toggle-todo":
             console.log('toggle todo')

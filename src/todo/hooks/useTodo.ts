@@ -6,5 +6,6 @@ export const useTodo = () => {
   return {
     todos: state.todos,
     postAction: dispatch,
+    pending: state.pending
   }
 }

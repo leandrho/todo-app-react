@@ -5,29 +5,13 @@ export type TodoAction =
         {type: 'toggle-todo', payload: {id: string}} |
         {type: 'remove-todo', payload: {id: string}} 
 
-// export const InitialState : TodoState = {
-//     todoCount: 0,
-//     todos: [],
-//     completed: 0,
-//     pending: 0
-// }
-export const InitialState : TodoState ={
-    todoCount: 2,
-    todos: [
-        {
-            id: ++todoNextId+'',
-            desc:  "Recolectar las piedras",
-            completed: false
-        },
-        {
-            id: ++todoNextId+'',
-            desc:  "Recolectar las aguas",
-            completed: false
-        }
-    ],
+export const InitialState : TodoState = {
+    todoCount: 0,
+    todos: [],
     completed: 0,
     pending: 0
 }
+
 export const todoReducer = (state :TodoState = InitialState, action: TodoAction ) : TodoState =>{
 
     switch (action.type) {

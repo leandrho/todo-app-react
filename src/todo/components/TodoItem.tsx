@@ -9,7 +9,7 @@ export const TodoItem = ({todo, toogleTodo, removeTodo}:TodoItemProps) => {
 
   return (
     <div className="py-6 px-4 border-b border-slate-300 flex justify-between items-center">
-      <p className={"cursor-pointer text-slate-800 " + (todo.completed ? ' line-through text-slate-300' : '')}
+      <p className={"cursor-pointer " + (todo.completed ? ' line-through text-slate-400 ' : 'text-slate-800 ')}
           onClick={()=>toogleTodo(todo.id)}
       >
         {todo.desc}

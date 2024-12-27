@@ -1,25 +1,17 @@
 
 import { TodoForm } from './components/TodoForm';
-import { useTodo } from "./hooks/useTodo"
-import type { Todo } from "./interfaces/interfaces"
+import { TodoList } from './components/TodoList';
 
 
 export const TodoApp = () => {
-    const {todos} = useTodo();
+
   return (
     <>
-      <main className=''>
+      <h1 className='text-slate-800 text-lg font-bold mb-4 tracking-[4px] uppercase'>Tareas App</h1>
+      <main className='flex flex-col gap-8'>
             <TodoForm />
-            <h1 className="text-red-300 text-6xl">Todos:</h1>
-            {
-                todos.map((todo: Todo) => (
-                    <div key={todo.id}>
-                        <p>{todo.desc}</p>
-                    </div>
-                ))
-            }
+            <TodoList />
       </main>
-        
     </>
   )
 }

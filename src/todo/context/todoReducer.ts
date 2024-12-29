@@ -16,7 +16,6 @@ export const todoReducer = (state :TodoState = InitialState, action: TodoAction 
 
     switch (action.type) {
         case "add-todo":
-            console.log('add todo')
             return {
                 ...state,
                 todoCount: state.todoCount + 1,
@@ -24,7 +23,6 @@ export const todoReducer = (state :TodoState = InitialState, action: TodoAction 
                 todos: [...state.todos, {...action.payload, id: ++todoNextId+''}]
             }
         case "toggle-todo":
-            console.log('toggle todo')
             return {
                 ...state,
                 todos: state.todos.map((todo)=>{
